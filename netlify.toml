@@ -1,0 +1,11 @@
+# Netlify build + continuous-deployment config.
+# Linked to the GitHub repo so every push to the default branch auto-deploys.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page-app fallback: let React Router handle every path.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
