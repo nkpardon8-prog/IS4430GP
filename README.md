@@ -5,7 +5,8 @@ student-athlete housing system. This is the **prototype interface** for
 Milestone 2 — realistic screens built from our Milestone 1 requirements. The
 buttons don't need to actually work; the screens need to look real.
 
-**Live site:** _(Netlify URL added after first deploy)_
+**Live site:** https://is4430gp.netlify.app
+**Repo:** https://github.com/nkpardon8-prog/IS4430GP
 
 ---
 
