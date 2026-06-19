@@ -72,24 +72,24 @@ export const SCREENS = [
   // --- Coach ----------------------------------------------------------------
   {
     id: 'C-01', title: 'Coach Dashboard', role: 'Coach', owner: 'Nick',
-    sourceReq: 'REQ-ROLE-004 §3.2', path: '/coach/dashboard', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.2', path: '/coach/dashboard', status: 'done',
     keyElements: ['Assigned-athlete submissions queue'],
   },
   {
     id: 'C-02', title: 'Submission Review + Comment', role: 'Coach', owner: 'Nick',
-    sourceReq: 'REQ-ROLE-004 §3.2', path: '/coach/review', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.2', path: '/coach/review', status: 'done',
     keyElements: ['Read-only request', 'Add recommendation (no approve/reject)'],
   },
   {
     id: 'C-03', title: 'Assigned Athlete Profile / Budget', role: 'Coach', owner: 'Nick',
-    sourceReq: 'REQ-ROLE-004 §3.2', path: '/coach/athlete', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.2', path: '/coach/athlete', status: 'done',
     keyElements: ['Scoped athlete view (only assigned athletes)'],
   },
 
   // --- Manager --------------------------------------------------------------
   {
     id: 'M-01', title: 'Manager Dashboard', role: 'Manager', owner: 'Nick',
-    sourceReq: 'REQ-ROLE-004 §3.3', path: '/manager/dashboard', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.3', path: '/manager/dashboard', status: 'done',
     keyElements: ['All-pending queue', 'Filters'],
   },
   {
@@ -99,7 +99,7 @@ export const SCREENS = [
   },
   {
     id: 'M-03', title: 'Request Status History (All)', role: 'Manager', owner: 'Nick',
-    sourceReq: 'REQ-ROLE-004 §3.3', path: '/manager/history', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.3', path: '/manager/history', status: 'done',
     keyElements: ['Full managed-athlete history'],
   },
 
@@ -116,7 +116,7 @@ export const SCREENS = [
   },
   {
     id: 'D-03', title: 'Housing Budget Management', role: 'Admin', owner: 'Nick',
-    sourceReq: 'REQ-BUDGET-003, REQ-SEC-005', path: '/admin/budgets', status: 'todo',
+    sourceReq: 'REQ-BUDGET-003, REQ-SEC-005', path: '/admin/budgets', status: 'done',
     keyElements: ['Budget edit', 'Old/new value audit capture'],
   },
   {

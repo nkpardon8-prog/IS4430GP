@@ -24,13 +24,13 @@ already done — copy it.
 - [ ] **D-01** Admin Dashboard / Settings — `src/screens/admin/Dashboard.jsx` — REQ-ROLE-004 §3.4
 - [ ] **D-05** Listing Collection History — `src/screens/admin/Collection.jsx` — REQ-LISTING-007 §3.6
 
-## Nick — 6 screens
-- [ ] **C-01** Coach Dashboard — `src/screens/coach/Dashboard.jsx` — REQ-ROLE-004 §3.2
-- [ ] **C-02** Submission Review + Comment — `src/screens/coach/Review.jsx` — REQ-ROLE-004 §3.2
-- [ ] **C-03** Assigned Athlete Profile / Budget — `src/screens/coach/Athlete.jsx` — REQ-ROLE-004 §3.2
-- [ ] **M-01** Manager Dashboard — `src/screens/manager/Dashboard.jsx` — REQ-ROLE-004 §3.3
-- [ ] **M-03** Request Status History (All) — `src/screens/manager/History.jsx` — REQ-ROLE-004 §3.3
-- [ ] **D-03** Housing Budget Management — `src/screens/admin/Budgets.jsx` — REQ-BUDGET-003, REQ-SEC-005
+## Nick — 6 screens ✅ all built
+- [x] **C-01** Coach Dashboard — `src/screens/coach/Dashboard.jsx` — REQ-ROLE-004 §3.2
+- [x] **C-02** Submission Review + Comment — `src/screens/coach/Review.jsx` — REQ-ROLE-004 §3.2
+- [x] **C-03** Assigned Athlete Profile / Budget — `src/screens/coach/Athlete.jsx` — REQ-ROLE-004 §3.2
+- [x] **M-01** Manager Dashboard — `src/screens/manager/Dashboard.jsx` — REQ-ROLE-004 §3.3
+- [x] **M-03** Request Status History (All) — `src/screens/manager/History.jsx` — REQ-ROLE-004 §3.3
+- [x] **D-03** Housing Budget Management — `src/screens/admin/Budgets.jsx` — REQ-BUDGET-003, REQ-SEC-005
 
 ---
 
