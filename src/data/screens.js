@@ -126,7 +126,7 @@ export const SCREENS = [
   },
   {
     id: 'D-05', title: 'Listing Collection History', role: 'Admin', owner: 'Patrick',
-    sourceReq: 'REQ-LISTING-007 §3.6', path: '/admin/collection', status: 'todo',
+    sourceReq: 'REQ-LISTING-007 §3.6', path: '/admin/collection', status: 'done',
     keyElements: ['Per-source status', 'Last run', 'Failure log'],
   },
   {
