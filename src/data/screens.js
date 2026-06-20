@@ -65,7 +65,7 @@ export const SCREENS = [
   },
   {
     id: 'A-06', title: 'Athlete Profile', role: 'Athlete', owner: 'Patrick',
-    sourceReq: 'REQ-ROLE-004 §3.1', path: '/athlete/profile', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.1', path: '/athlete/profile', status: 'done',
     keyElements: ['Profile fields', 'Assigned budget', 'Status history'],
   },
 
