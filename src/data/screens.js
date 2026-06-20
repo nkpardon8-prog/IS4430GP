@@ -45,7 +45,7 @@ export const SCREENS = [
   },
   {
     id: 'A-02', title: 'Residence Search + Filter', role: 'Athlete', owner: 'Patrick',
-    sourceReq: 'REQ-SEARCH-009', path: '/athlete/search', status: 'todo',
+    sourceReq: 'REQ-SEARCH-009', path: '/athlete/search', status: 'done',
     keyElements: ['Filter rail', 'Sort controls', 'Result cards', 'Budget-fit badge'],
   },
   {
