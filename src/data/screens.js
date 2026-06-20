@@ -106,7 +106,7 @@ export const SCREENS = [
   // --- Admin ----------------------------------------------------------------
   {
     id: 'D-01', title: 'Admin Dashboard / Settings', role: 'Admin', owner: 'Patrick',
-    sourceReq: 'REQ-ROLE-004 §3.4', path: '/admin/dashboard', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.4', path: '/admin/dashboard', status: 'done',
     keyElements: ['System settings', 'Collection health summary'],
   },
   {
