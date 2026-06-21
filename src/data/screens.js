@@ -60,7 +60,7 @@ export const SCREENS = [
   },
   {
     id: 'A-05', title: 'Request Status / History', role: 'Athlete', owner: 'Mike',
-    sourceReq: 'REQ-NOTIFY-012 FR-5', path: '/athlete/status', status: 'todo',
+    sourceReq: 'REQ-NOTIFY-012 FR-5', path: '/athlete/status', status: 'done',
     keyElements: ['Lifecycle timeline', 'Cancel-pending action'],
   },
   {
