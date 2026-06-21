@@ -55,7 +55,7 @@ export const SCREENS = [
   },
   {
     id: 'A-04', title: 'Residence Submission Form', role: 'Athlete', owner: 'Mike',
-    sourceReq: 'REQ-SUBMIT-011', path: '/athlete/submit', status: 'todo',
+    sourceReq: 'REQ-SUBMIT-011', path: '/athlete/submit', status: 'done',
     keyElements: ['Prefilled summary', 'Out-of-pocket confirm checkbox', 'Optional notes'],
   },
   {
