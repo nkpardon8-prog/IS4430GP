@@ -4,6 +4,7 @@ import Card from './ui/Card'
 import Badge from './ui/Badge'
 import StatusPill from './ui/StatusPill'
 import { memberByKey } from '../data/team'
+import { teamPath } from '../lib/routes'
 
 // ScreenCard — the standard tile for a screen. Used on role dashboards,
 // the Home "My Work" panel, and the progress overview. Shows the traceability
@@ -37,7 +38,7 @@ export default function ScreenCard({ screen }) {
 
       <div className="mt-auto border-t border-line px-4 py-2.5">
         <Link
-          to={`/team${screen.path}`}
+          to={teamPath(screen.path)}
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover"
         >
           Open screen

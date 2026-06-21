@@ -5,6 +5,7 @@ import { TEAM, CURRENT_MEMBER } from '../data/team'
 import { SCREENS, screensByOwner, screensByRole, progress } from '../data/screens'
 import ScreenCard from '../components/ScreenCard'
 import { Button, Card, CardBody } from '../components/ui'
+import { teamPath } from '../lib/routes'
 
 export default function Home() {
   const [selected, setSelected] = useState(CURRENT_MEMBER.key)
@@ -28,11 +29,11 @@ export default function Home() {
           screens on top of it.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button as={Link} to="/team/athlete">
+          <Button as={Link} to={teamPath('/athlete')}>
             Browse Athlete screens
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
-          <Button as={Link} to="/team/style-guide" variant="secondary">
+          <Button as={Link} to={teamPath('/style-guide')} variant="secondary">
             View the style guide
           </Button>
         </div>

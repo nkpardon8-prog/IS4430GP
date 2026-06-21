@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, Home as HomeIcon } from 'lucide-react'
+import { ROLES } from '../data/screens'
+import { TEAM_BASE } from '../lib/routes'
 
-// Team view lives under /team, so every tab is prefixed.
+// Team view lives under TEAM_BASE; tabs derive from the role registry so adding a
+// role never requires touching this file.
 const TABS = [
-  { to: '/team', label: 'Home', end: true },
-  { to: '/team/athlete', label: 'Athlete' },
-  { to: '/team/coach', label: 'Coach' },
-  { to: '/team/manager', label: 'Manager' },
-  { to: '/team/admin', label: 'Admin' },
-  { to: '/team/style-guide', label: 'Style Guide' },
+  { to: TEAM_BASE, label: 'Home', end: true },
+  ...ROLES.filter((r) => r !== 'Auth').map((r) => ({
+    to: `${TEAM_BASE}/${r.toLowerCase()}`,
+    label: r,
+  })),
+  { to: `${TEAM_BASE}/style-guide`, label: 'Style Guide' },
 ]
 
 function tabClass({ isActive }) {
@@ -24,7 +27,7 @@ export default function TabNav() {
     <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         {/* Brand */}
-        <Link to="/team" className="flex items-center gap-2.5">
+        <Link to={TEAM_BASE} className="flex items-center gap-2.5">
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary font-display text-lg font-bold text-white">
             U
           </span>

@@ -7,6 +7,7 @@ import StyleGuide from './screens/StyleGuide'
 import RoleIndex from './screens/RoleIndex'
 import { SCREENS } from './data/screens'
 import { Button } from './components/ui'
+import { TEAM_BASE } from './lib/routes'
 
 // Every screen's component, keyed by its registry id.
 import Login from './screens/auth/Login'
@@ -67,7 +68,7 @@ export default function App() {
       </Route>
 
       {/* ---------- Team view (project-management dashboard) ---------- */}
-      <Route path="/team" element={<Layout />}>
+      <Route path={TEAM_BASE} element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="style-guide" element={<StyleGuide />} />
         <Route path="athlete" element={<RoleIndex role="Athlete" />} />

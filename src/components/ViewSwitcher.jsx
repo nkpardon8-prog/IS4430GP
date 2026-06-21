@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
+import { TEAM_BASE } from '../lib/routes'
 
 // ViewSwitcher — the slim top strip that flips between the clean product
 // (Submission view, /) and the team dashboard (Team view, /team). Shown on both.
 export default function ViewSwitcher() {
   const { pathname } = useLocation()
-  const isTeam = pathname === '/team' || pathname.startsWith('/team/')
+  const isTeam = pathname === TEAM_BASE || pathname.startsWith(`${TEAM_BASE}/`)
 
   const tab = (active) =>
     `rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -19,7 +20,7 @@ export default function ViewSwitcher() {
         </span>
         <div className="flex items-center gap-0.5 rounded-lg border border-line bg-surface p-0.5">
           <Link to="/" className={tab(!isTeam)}>Submission view</Link>
-          <Link to="/team" className={tab(isTeam)}>Team view</Link>
+          <Link to={TEAM_BASE} className={tab(isTeam)}>Team view</Link>
         </div>
       </div>
     </div>
