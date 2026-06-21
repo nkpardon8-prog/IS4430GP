@@ -27,12 +27,12 @@ export const SCREENS = [
   // --- Shared / Auth --------------------------------------------------------
   {
     id: 'S-01', title: 'Login (UID + Password)', role: 'Auth', owner: 'Ellie',
-    sourceReq: 'REQ-AUTH-001', path: '/login', status: 'todo',
+    sourceReq: 'REQ-AUTH-001', path: '/login', status: 'done',
     keyElements: ['UID field', 'Password field', 'Error state for invalid login'],
   },
   {
     id: 'S-02', title: 'Access Denied', role: 'Auth', owner: 'Ellie',
-    sourceReq: 'REQ-ROLE-004 §3.6, REQ-SEC-005', path: '/access-denied', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.6, REQ-SEC-005', path: '/access-denied', status: 'done',
     keyElements: ['Clean "no details" message', 'Return-to-login action'],
   },
 
@@ -111,7 +111,7 @@ export const SCREENS = [
   },
   {
     id: 'D-02', title: 'User + Role Management', role: 'Admin', owner: 'Ellie',
-    sourceReq: 'REQ-ROLE-004 §3.5', path: '/admin/users', status: 'todo',
+    sourceReq: 'REQ-ROLE-004 §3.5', path: '/admin/users', status: 'done',
     keyElements: ['User table', 'Role dropdown', 'Change-history note'],
   },
   {
@@ -121,7 +121,7 @@ export const SCREENS = [
   },
   {
     id: 'D-04', title: 'Approved Website Management', role: 'Admin', owner: 'Ellie',
-    sourceReq: 'REQ-SITE-006', path: '/admin/websites', status: 'todo',
+    sourceReq: 'REQ-SITE-006', path: '/admin/websites', status: 'done',
     keyElements: ['Add / edit / disable / remove', 'Active / inactive status'],
   },
   {
@@ -131,7 +131,7 @@ export const SCREENS = [
   },
   {
     id: 'D-06', title: 'Audit / System History', role: 'Admin', owner: 'Ellie',
-    sourceReq: 'REQ-SEC-005 §3.5', path: '/admin/audit', status: 'todo',
+    sourceReq: 'REQ-SEC-005 §3.5', path: '/admin/audit', status: 'done',
     keyElements: ['Read-only event log'],
   },
 ]
