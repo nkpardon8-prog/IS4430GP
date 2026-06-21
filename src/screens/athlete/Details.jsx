@@ -1,12 +1,6 @@
 // A-03 · Residence Details + Budget Comparison
 // Owner: Mike · Traces to REQ-DETAIL-010
-// TODO (Mike): replace <PlaceholderScreen/> with the real screen. Build it with
-// components from '../../components/ui'; copy src/screens/athlete/Dashboard.jsx
-// (A-01) as a starting point. Then set status: 'done' in src/data/screens.js.
-import PlaceholderScreen from '../../components/PlaceholderScreen'
-
-export default function Details() {
-  return import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   MapPin, ExternalLink, Image as ImageIcon, Bed, Bath,
   Calendar, Car, Zap, Sofa, PawPrint, Ruler, Send,
@@ -19,19 +13,10 @@ import { Button, Card, CardBody, CardHeader, Badge } from '../../components/ui'
 
 // ============================================================================
 //  A-03 · Residence Details + Budget Comparison  (REQ-DETAIL-010)
-//  ----------------------------------------------------------------------------
-//  Shows one collected listing in full and compares its rent to the athlete's
-//  current housing budget so the athlete (and later the Athletic Manager) judge
-//  the same numbers before a decision. Visual prototype: data is hard-coded.
 // ============================================================================
 
-// Current athlete. Pulling from the shared fixture keeps Jordan Rivera coherent
-// across A-01, the manager queue, etc. His most recent budget drives the
-// comparison, which satisfies NFR-3 (use the latest stored budget).
 const ATHLETE = ATHLETES[0]
 
-// The listing being viewed. A collected listing is not yet a submitted request,
-// so it is a local object rather than a row from REQUESTS.
 const LISTING = {
   name: 'Sunnyside Court Apartments — Unit 204',
   address: '820 S Foothill Dr, Salt Lake City, UT',
@@ -40,8 +25,6 @@ const LISTING = {
   source: 'Zillow',
   sourceUrl: 'https://www.zillow.com',
   distanceMiles: 1.8,
-  // FR-2 attributes. A null value means the source did not supply the field, so
-  // the UI labels it instead of showing a blank (NFR-1).
   attributes: [
     { icon: Bed, label: 'Bedrooms', value: '2' },
     { icon: Bath, label: 'Bathrooms', value: '1' },
@@ -50,26 +33,22 @@ const LISTING = {
     { icon: Sofa, label: 'Furnished', value: 'No' },
     { icon: Car, label: 'Parking', value: '1 covered space' },
     { icon: Zap, label: 'Utilities', value: 'Water & trash included' },
-    { icon: PawPrint, label: 'Pet policy', value: null }, // missing -> labeled
+    { icon: PawPrint, label: 'Pet policy', value: null },
   ],
 }
 
-// Placeholder photo captions (FR-3). We do not embed real copyrighted images in
-// a class prototype; these tiles stand in for the source photo gallery.
 const PHOTOS = ['Front exterior', 'Living area', 'Kitchen', 'Bedroom']
 
 export default function Details() {
   const screen = screenById('A-03')
-  const oop = outOfPocket(LISTING.rent, ATHLETE.budget) // FR-5 out-of-pocket
+  const oop = outOfPocket(LISTING.rent, ATHLETE.budget)
   const overBudget = oop > 0
-  // Width of the "within budget" portion of the comparison bar.
   const budgetPct = Math.min(100, Math.round((ATHLETE.budget / LISTING.rent) * 100))
 
   return (
     <div>
       <ScreenHeader screen={screen} />
 
-      {/* Title row: name/address/type (FR-1) + a plain-language budget verdict */}
       <div className="mb-6 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="font-display text-2xl font-semibold text-ink">{LISTING.name}</h2>
@@ -83,7 +62,6 @@ export default function Details() {
         </Badge>
       </div>
 
-      {/* Photo gallery (FR-3) */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {PHOTOS.map((cap) => (
           <div
@@ -97,7 +75,6 @@ export default function Details() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {/* Residence details (FR-1, FR-2, FR-4, source link) */}
         <Card className="lg:col-span-2">
           <CardHeader
             title="Residence details"
@@ -114,7 +91,6 @@ export default function Details() {
                     <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
                     {label}
                   </dt>
-                  {/* Missing source fields are labeled, never left blank (NFR-1) */}
                   <dd className={`text-sm ${value ? 'text-ink' : 'italic text-muted'}`}>
                     {value ?? 'Not provided by source'}
                   </dd>
@@ -127,8 +103,7 @@ export default function Details() {
               <span className="font-medium text-ink tnum">{LISTING.distanceMiles} mi</span>
             </div>
 
-            {/* Source website + original listing link (FR-1) */}
-            
+            <a
               href={LISTING.sourceUrl}
               target="_blank"
               rel="noreferrer"
@@ -140,7 +115,6 @@ export default function Details() {
           </CardBody>
         </Card>
 
-        {/* Budget comparison (FR-5) */}
         <Card>
           <CardHeader title="Budget comparison" />
           <CardBody>
@@ -164,7 +138,6 @@ export default function Details() {
               </div>
             </div>
 
-            {/* Visual bar: crimson = covered by budget, red = over budget */}
             <div className="mt-4">
               <div className="flex h-2.5 overflow-hidden rounded-full bg-line">
                 <div className="bg-primary" style={{ width: `${budgetPct}%` }} />
