@@ -94,7 +94,7 @@ export const SCREENS = [
   },
   {
     id: 'M-02', title: 'Request Review + Decision', role: 'Manager', owner: 'Mike',
-    sourceReq: 'REQ-SUBMIT-011 FR-6/7', path: '/manager/decision', status: 'todo',
+    sourceReq: 'REQ-SUBMIT-011 FR-6/7', path: '/manager/decision', status: 'done',
     keyElements: ['Single decision view', 'Approve / reject', 'Comment / reason'],
   },
   {
