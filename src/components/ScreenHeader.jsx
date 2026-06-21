@@ -1,10 +1,24 @@
 import Badge from './ui/Badge'
 import { memberByKey } from '../data/team'
 import { requirementFor } from '../data/requirements'
+import { useViewMode } from '../context/ViewMode'
 
-// ScreenHeader — the consistent title block every screen should start with.
-// Real screens and placeholders both use it, so the app stays cohesive.
+// ScreenHeader — the consistent title block every screen starts with.
+// In SUBMISSION view it renders a clean product title only. In TEAM view it adds
+// the dev meta (screen id, role badge, owner, "Traces to REQ-…"). This is how the
+// same screen reads as a real product for the grader and as a tracked task for the
+// team — without any screen file having to change.
 export default function ScreenHeader({ screen }) {
+  const mode = useViewMode()
+
+  if (mode === 'submission') {
+    return (
+      <div className="mb-6 border-b border-line pb-5">
+        <h1 className="font-display text-3xl font-semibold text-ink">{screen.title}</h1>
+      </div>
+    )
+  }
+
   const owner = memberByKey(screen.owner)
   const req = requirementFor(screen.sourceReq)
   return (

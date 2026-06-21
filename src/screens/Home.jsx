@@ -28,11 +28,11 @@ export default function Home() {
           screens on top of it.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button as={Link} to="/athlete">
+          <Button as={Link} to="/team/athlete">
             Browse Athlete screens
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
-          <Button as={Link} to="/style-guide" variant="secondary">
+          <Button as={Link} to="/team/style-guide" variant="secondary">
             View the style guide
           </Button>
         </div>

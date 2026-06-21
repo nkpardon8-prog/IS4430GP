@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, Home as HomeIcon } from 'lucide-react'
 
+// Team view lives under /team, so every tab is prefixed.
 const TABS = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/athlete', label: 'Athlete' },
-  { to: '/coach', label: 'Coach' },
-  { to: '/manager', label: 'Manager' },
-  { to: '/admin', label: 'Admin' },
-  { to: '/style-guide', label: 'Style Guide' },
+  { to: '/team', label: 'Home', end: true },
+  { to: '/team/athlete', label: 'Athlete' },
+  { to: '/team/coach', label: 'Coach' },
+  { to: '/team/manager', label: 'Manager' },
+  { to: '/team/admin', label: 'Admin' },
+  { to: '/team/style-guide', label: 'Style Guide' },
 ]
 
 function tabClass({ isActive }) {
@@ -23,7 +24,7 @@ export default function TabNav() {
     <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-2.5">
+        <Link to="/team" className="flex items-center gap-2.5">
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary font-display text-lg font-bold text-white">
             U
           </span>

@@ -1,14 +1,14 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
+import SubmissionLayout from './components/submission/SubmissionLayout'
+import SubmissionLogin from './components/submission/SubmissionLogin'
 import Home from './screens/Home'
 import StyleGuide from './screens/StyleGuide'
 import RoleIndex from './screens/RoleIndex'
 import { SCREENS } from './data/screens'
 import { Button } from './components/ui'
 
-// Every screen's component, keyed by its registry id. This is the only place
-// routing knows about screen files — teammates never edit it. To build a screen,
-// just edit its file (already imported below); routing already works.
+// Every screen's component, keyed by its registry id.
 import Login from './screens/auth/Login'
 import AccessDenied from './screens/auth/AccessDenied'
 import AthleteDashboard from './screens/athlete/Dashboard'
@@ -45,7 +45,7 @@ function NotFound() {
     <div className="py-16 text-center">
       <h1 className="font-display text-3xl font-semibold text-ink">Page not found</h1>
       <p className="mt-2 text-muted">That route doesn’t exist in the prototype.</p>
-      <Button as={Link} to="/" className="mt-6">Back to Home</Button>
+      <Button as={Link} to="/" className="mt-6">Back to sign in</Button>
     </div>
   )
 }
@@ -53,19 +53,35 @@ function NotFound() {
 export default function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/style-guide" element={<StyleGuide />} />
-        <Route path="/athlete" element={<RoleIndex role="Athlete" />} />
-        <Route path="/coach" element={<RoleIndex role="Coach" />} />
-        <Route path="/manager" element={<RoleIndex role="Manager" />} />
-        <Route path="/admin" element={<RoleIndex role="Admin" />} />
-        {SCREENS.map((s) => {
+      {/* ---------- Submission view (default, clean product) ---------- */}
+      {/* Front door: login + role chooser */}
+      <Route path="/" element={<SubmissionLogin />} />
+      <Route path="/login" element={<Navigate to="/" replace />} />
+      {/* All non-auth screens at their own paths, in the clean product chrome */}
+      <Route element={<SubmissionLayout />}>
+        {SCREENS.filter((s) => s.role !== 'Auth').map((s) => {
           const Comp = COMPONENTS[s.id]
           return <Route key={s.id} path={s.path} element={<Comp />} />
         })}
-        <Route path="*" element={<NotFound />} />
+        <Route path="/access-denied" element={<AccessDenied />} />
       </Route>
+
+      {/* ---------- Team view (project-management dashboard) ---------- */}
+      <Route path="/team" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="style-guide" element={<StyleGuide />} />
+        <Route path="athlete" element={<RoleIndex role="Athlete" />} />
+        <Route path="coach" element={<RoleIndex role="Coach" />} />
+        <Route path="manager" element={<RoleIndex role="Manager" />} />
+        <Route path="admin" element={<RoleIndex role="Admin" />} />
+        {SCREENS.map((s) => {
+          const Comp = COMPONENTS[s.id]
+          // s.path is absolute ('/athlete/dashboard'); make it relative to /team
+          return <Route key={s.id} path={s.path.slice(1)} element={<Comp />} />
+        })}
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

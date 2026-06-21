@@ -37,7 +37,7 @@ export default function ScreenCard({ screen }) {
 
       <div className="mt-auto border-t border-line px-4 py-2.5">
         <Link
-          to={screen.path}
+          to={`/team${screen.path}`}
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover"
         >
           Open screen
