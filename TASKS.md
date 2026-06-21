@@ -5,7 +5,7 @@ file shown, then set its `status` in `src/data/screens.js`. The A-01 example is
 already done — copy it.
 
 ## Mike — 5 screens
-- [ ] **A-01** Athlete Dashboard — `src/screens/athlete/Dashboard.jsx` — REQ-NOTIFY-012 FR-4 — ✅ DONE (example)
+- [ ] **A-01** Athlete Dashboard — `src/screens/athlete/Dashboard.jsx` — REQ-NOTIFY-012 FR-4 — 
 - [ ] **A-03** Residence Details + Budget Comparison — `src/screens/athlete/Details.jsx` — REQ-DETAIL-010
 - [ ] **A-04** Residence Submission Form — `src/screens/athlete/Submit.jsx` — REQ-SUBMIT-011
 - [ ] **A-05** Request Status / History — `src/screens/athlete/Status.jsx` — REQ-NOTIFY-012 FR-5
