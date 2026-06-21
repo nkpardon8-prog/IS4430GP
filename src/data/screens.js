@@ -50,7 +50,7 @@ export const SCREENS = [
   },
   {
     id: 'A-03', title: 'Residence Details + Budget Comparison', role: 'Athlete', owner: 'Mike',
-    sourceReq: 'REQ-DETAIL-010', path: '/athlete/details', status: 'todo',
+    sourceReq: 'REQ-DETAIL-010', path: '/athlete/details', status: 'done',
     keyElements: ['Photos', 'Attributes', 'Source link', 'Out-of-pocket calculation'],
   },
   {
